@@ -1,7 +1,6 @@
 from django.test import Client, TestCase
 from django.urls import reverse
 from rest_framework_jwt.serializers import User
-from datetime import date
 from animals_api.models import Cat, Dog
 
 
@@ -73,7 +72,7 @@ class UserAPITestCase(TestCase):
             'Expect a new user to have been created'
 
     def test_can_view_not_own_cat(self):
-        """PUT /cats/ returns 404"""
+        """GET /cats/ returns 404"""
 
         url = reverse("cats-detail", args=[self.second_cat.pk])
 

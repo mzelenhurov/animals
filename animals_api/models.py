@@ -7,9 +7,9 @@ class Animals(models.Model):
     class Meta:
         abstract = True
 
-    name = models.CharField(max_length=255, null=True, blank=True)
+    name = models.CharField(max_length=255, null=True, blank=True, help_text="string")
     owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    birthday_date = models.DateField(null=True, blank=True)
+    birthday_date = models.DateField(null=True, blank=True, help_text="date")
 
 
 class Cat(Animals):

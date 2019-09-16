@@ -8,6 +8,9 @@ from animals_api.serializers import CatsSerializer, DogsSerializer
 
 
 class CatsViewSet(viewsets.ModelViewSet):
+    """
+    Returns a list of all your cats in the system.
+    """
     queryset = Cat.objects.all()
     serializer_class = CatsSerializer
     permission_classes = (IsAuthenticated, IsOwner)
@@ -23,6 +26,9 @@ class CatsViewSet(viewsets.ModelViewSet):
 
 
 class DogsViewSet(viewsets.ModelViewSet):
+    """
+    Returns a list of all your dogs in the system.
+    """
     queryset = Dog.objects.all()
     serializer_class = DogsSerializer
     permission_classes = (IsAuthenticated, IsOwner)
