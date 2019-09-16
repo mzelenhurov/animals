@@ -2,7 +2,7 @@ from django.contrib import admin
 from animals_api.models import Cat, Dog
 
 
-class MyModelAdmin(admin.ModelAdmin):
+class CatsDogsAdmin(admin.ModelAdmin):
     readonly_fields = ('owner',)
 
     def get_queryset(self, request):
@@ -27,5 +27,7 @@ class MyModelAdmin(admin.ModelAdmin):
         obj.save()
 
 
-admin.site.register(Cat, MyModelAdmin)
-admin.site.register(Dog, MyModelAdmin)
+admin.site.register(Cat, CatsDogsAdmin)
+admin.site.register(Dog, CatsDogsAdmin)
+
+
