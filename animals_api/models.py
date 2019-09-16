@@ -3,7 +3,6 @@ from django.db import models
 
 
 class Animals(models.Model):
-
     class Meta:
         abstract = True
 
